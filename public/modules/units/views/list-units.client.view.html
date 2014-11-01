@@ -1,0 +1,28 @@
+<section data-ng-controller="UnitsController" data-ng-init="find()">
+  <div class="page-header">
+    <h1>Units</h1>
+    <small>Tracking {{units.length}} units in Brave Frontier</small>
+    <input type="search" data-ng-model="q" placeholder="">
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="unit in units | filter:q | limitTo: 10" data-ng-href="#!/units/{{unit._id}}" class="list-group-item animate-repeat">
+      <h2>{{unit.Name}}</h2>
+      <span data-ng-repeat="attr in unit">
+
+        <span class="char-attribute">{{attr}}</span>
+      </span>
+      <img class="lazy" ng-src="{{unit.Icon}}">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="unit.created | date:'medium'"></span>
+        by
+        <span data-ng-bind="unit.user.displayName"></span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="unit.name"></h4>
+    </a>
+    <strong class="animate-repeat" data-ng-if="unit.length == 0">Sorry, no results found...</strong>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-hide="!units.$resolved || units.length">
+    No Units yet, why don't you <a href="/#!/units/create">create one</a>?
+  </div>
+</section>
