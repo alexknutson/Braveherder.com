@@ -2,9 +2,9 @@
 
 module.exports = {
 	app: {
-		title: 'Dune',
-		description: 'Video Streaming Service with MongoDB, Express, AngularJS, and Node.js',
-		keywords: 'Videos, Streaming, Upload, Dune Video'
+		title: 'BraverHerder',
+		description: 'Brave Frontier Unit Database with MongoDB, Express, AngularJS, and Node.js',
+		keywords: 'Brave Frontier, Units, Characters, Database, Team Building, BraverHerder'
 	},
 	port: process.env.PORT || 3000,
 	templateEngine: 'swig',

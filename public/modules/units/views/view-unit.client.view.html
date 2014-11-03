@@ -2,6 +2,93 @@
 	<div class="page-header">
 		<h1 data-ng-bind="unit.name"></h1>
 	</div>
+  <div class="list-group">
+    <a data-ng-init="unit" data-ng-href="#!/units/{{unit._id}}" class="{{unit.Element}} unit-list-item list-group-item animate-repeat row">
+
+      <div class="row">
+        <div class="col-md-5 unit-description-container">
+          <h2 class="unit-name {{unit.Name}}"><small>#{{unit.ID}} </small>{{unit.Name}}</h2>
+          <img class="lazy img-small" ng-src="{{unit.Icon}}">
+          <span>BB Skill</span>
+          <span>{{unit['BB Skill']}}</span>
+
+        </tr>
+        <img class="lazy img-large" ng-src="{{unit.Image}}">
+      </div>
+      <div class="col-md-5  col-md-offset-2 unit-stats-container">
+
+        <table class="table table-striped unit-type-grid .col-md-4 ">
+          <tr>
+            <th>
+              <i data-ng-repeat="stars in getTimes(unit.Rarity) track by $index" class="glyphicon glyphicon-star"></i>
+            </th>
+            <th>HP</th>
+            <th>ATK</th>
+            <th>DEF</th>
+            <th>REC</th>
+          </tr>
+          <tr>
+            <td>Lord</td>
+            <td>{{unit['HP Lord']}}</td>
+            <td>{{unit['ATK Lord']}}</td>
+            <td>{{unit['DEF Lord']}}</td>
+            <td>{{unit['REC Lord']}}</td>
+          </tr>
+          <tr>
+            <td>Anima</td>
+            <td class="success">{{unit['HP Anima']}}</td>
+            <td>{{unit['ATK Anima']}}</td>
+            <td>{{unit['DEF Anima']}}</td>
+            <td>{{unit['REC Anima']}}</td>
+          </tr>
+          <tr>
+            <td>Breaker</td>
+            <td>{{unit['HP Breaker']}}</td>
+            <td class="success">{{unit['ATK Breaker']}}</td>
+            <td>{{unit['DEF Breaker']}}</td>
+            <td>{{unit['REC Breaker']}}</td>
+          </tr>
+          <tr>
+            <td>Guardian</td>
+            <td>{{unit['HP Guardian']}}</td>
+            <td>{{unit['ATK Guardian']}}</td>
+            <td class="success">{{unit['DEF Guardian']}}</td>
+            <td>{{unit['REC Guardian']}}</td>
+          </tr>
+          <tr>
+            <td>Oracle</td>
+            <td>{{unit['HP Oracle']}}</td>
+            <td>{{unit['ATK Oracle']}}</td>
+            <td>{{unit['DEF Oracle']}}</td>
+            <td class="success">{{unit['REC Oracle']}}</td>
+          </tr>
+          <tr>
+            <th class="">Type Bonus</th>
+            <th ng-init="unit.hpBonus = unit['HP Anima'] - unit['HP Lord']" style="color: green;">{{unit.hpBonus}}</th>
+            <th ng-init="unit.atkBonus = unit['ATK Breaker'] - unit['ATK Lord']" style="color: green;">{{unit.atkBonus}}</th>
+            <th ng-init="unit.defBonus = unit['DEF Guardian'] - unit['DEF Lord']" style="color: green;">{{unit.defBonus}}</th>
+            <th ng-init="unit.recBonus = unit['REC Oracle'] - unit['REC Lord']" style="color: green;">{{unit.recBonus}}</th>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+
+    <!--<span data-ng-repeat="attr in unit">-->
+
+    <!--<span class="char-attribute">{{attr}}</span>-->
+    <!--</span>-->
+    <small class="list-group-item-text">
+      Posted on
+      <span data-ng-bind="unit.created | date:'medium'"></span>
+      by
+      <span data-ng-bind="unit.user.displayName"></span>
+    </small>
+    <h4 class="list-group-item-heading" data-ng-bind="unit.name"></h4>
+  </a>
+  <strong class="animate-repeat" data-ng-if="unit.length == 0">Sorry, no results found...</strong>
+</div>
+
 	<div class="pull-right" data-ng-show="authentication.user._id == unit.user._id">
 		<a class="btn btn-primary" href="/#!/units/{{unit._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>

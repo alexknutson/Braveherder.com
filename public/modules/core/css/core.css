@@ -1,15 +1,110 @@
 .content {
-	margin-top: 50px;
+  margin-top: 50px;
 }
 .undecorated-link:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-	display: none !important;
+  display: none !important;
 }
 .ng-invalid.ng-dirty{
-    border-color:#FA787E;
+  border-color:#FA787E;
 }
 .ng-valid.ng-dirty{
-    border-color:#78FA89;
+  border-color:#78FA89;
 }
+
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: initial;
+}
+body {
+}
+.table-striped>tbody>tr:nth-child(even) {
+  background-color: rgba(48, 48, 48, 0.91);
+}
+.unit-type-grid {
+  position: relative;
+  z-index: 999;
+}
+.unit-type-grid tr td:first-child {
+  font-weight: bold;
+  color: white;
+}
+.unit-type-grid th {
+  color: white;
+}
+.unit-type-grid th.success {
+  background-color: transparent !important;
+}
+.unit-type-grid i {
+  color: #00bc8c;
+}
+
+.unit-description-container {
+  color: white;
+  position: relative;
+  z-index: 99;
+  background-color: rgba(0,0,0,0.5);
+  background-repeat: repeat-y;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  background: -moz-linear-gradient(left, #2F2727, #1a82f7);
+  background: -ms-linear-gradient(left, #2F2727, #1a82f7);
+  background: -o-linear-gradient(left, #2F2727, #1a82f7);
+}
+.unit-description-container .img-large {
+  position:absolute;
+  width:100%;
+  top: 6%;
+  left: 45%;
+  z-index: 1;
+  transform: rotate3d(0, -63, 0, 190deg);
+}
+.unit-list-item {
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.unit-description-container small {
+  position: absolute;
+  top: 8px;
+  font-size: 43%;
+  color: white;
+}
+.Fire .unit-description-container {
+  border-top: 5px solid rgba(200, 26, 26, 0.93);
+}
+.Water .unit-description-container {
+  border-top: 5px solid rgba(28, 152, 228, 0.93);;
+}
+.Earth .unit-description-container {
+  border-top: 5px solid rgba(73, 157, 64, 0.93);
+}
+.Thunder .unit-description-container {
+  border-top: 5px solid rgba(247, 231, 65, 0.93);
+}
+.Dark .unit-description-container {
+  border-top: 5px solid rgba(101, 57, 157, 0.93);
+}
+.Light .unit-description-container {
+  border-top: 5px solid rgba(255, 255, 255, 1);
+}
+.unit-name, .unit-description-container span {
+
+}
+
+.row {
+  background-color: rgba(0,0,0,0.5);
+  background-repeat: repeat-y;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  background: -moz-linear-gradient(left, #2F2727, #1a82f7);
+  background: -ms-linear-gradient(left, #2F2727, #1a82f7);
+  background: -o-linear-gradient(left, #2F2727, #1a82f7);
+}
+@media all and (max-width: 768px) {
+
+}
+
+
+

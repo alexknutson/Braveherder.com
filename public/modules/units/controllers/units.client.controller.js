@@ -53,10 +53,10 @@ angular.module('units').controller('UnitsController', ['$scope', '$stateParams',
       };
 
       // Find a list of Units
-      $scope.find = function(type) {
+      $scope.find = function() {
         $scope.units = Units.query();
         // Returns Units Data
-        //console.log($scope.units);
+        console.log($scope.units);
 
       };
 
@@ -66,5 +66,21 @@ angular.module('units').controller('UnitsController', ['$scope', '$stateParams',
           unitId: $stateParams.unitId
         });
       };
+      // Rarity Star Iterator
+      $scope.getTimes=function(n){
+        return new Array(n);
+      };
+      $scope.getEvoList=function(unit){
+        var evo_list = [];
+        evo_list.push(unit['Evo 1']);
+        evo_list.push(unit['Evo 2']);
+        evo_list.push(unit['Evo 3']);
+        evo_list.push(unit['Evo 4']);
+        evo_list.push(unit['Evo 5']);
+        return evo_list;
+      };
+
+
+
     }
 ]);
