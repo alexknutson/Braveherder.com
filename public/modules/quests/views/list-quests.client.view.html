@@ -1,0 +1,19 @@
+<section data-ng-controller="QuestsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Quests</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="quest in quests" data-ng-href="#!/quests/{{quest._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="quest.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="quest.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="quest.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!quests.$resolved || quests.length">
+    	No Quests yet, why don't you <a href="/#!/quests/create">create one</a>?
+    </div>
+</section>
