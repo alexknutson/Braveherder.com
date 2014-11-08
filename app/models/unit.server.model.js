@@ -10,178 +10,180 @@ var mongoose = require('mongoose'),
  * Unit Schema
  */
 var UnitSchema = new Schema({
-  //name: {
-  //type: String,
-  //default: '',
-  //required: 'Please fill Unit name',
-  //trim: true
-  //},
-  created: {
-    type: Date,
-    default: Date.now
-  },
-    user: {
-      type: Schema.ObjectId,
-    ref: 'User'
-    },
-    'ID': {
-      type: Number,
-    },
-    'Name': {
-      type: String,
-      trim: true,
-      default: '',
-    },
-    'Series': {
-      type: String,
-    },
-    'Rarity': {
-      type: Number,
-    },
-    'Leader Skill': {
-      type: String,
-    },
-    'BB Skill': {
-      type: String,
-    },
-    'SBB Skill': {
-      type: String,
-    },
-    'BB Type': {
-      type: String,
-    },
-    'SBB Type': {
-      type: String,
-    },
-    'Cost': {
-      type: Number,
-    },
-    'Max LVL': {
-      type: Number,
-    },
-    'Element': {
-      type: String,
-    },
-    'Hits': {
-      type: Number,
-    },
-    'BB Hits': {
-      type: Number,
-    },
-    'SBB Hits': {
-      type: String,
-    },
-    'BB Fill': {
-      type: Number,
-    },
-    'SBB Fill': {
-      type: String,
-    },
-    'Evo Zel': {
-      type: String,
-    },
-    'Acquire': {
-      type: String,
-    },
-    'Gender': {
-      type: String,
-    },
-    'BFPRO Notes': {
-      type: String,
-    },
-    'Batch': {
-      type: String,
-    },
-    'Type Pref': {
-      type: String,
-    },
-    'Evo 1': {
-      type: String,
-    },
-    'Evo 2': {
-      type: String,
-    }, 
-    'Evo 3': {
-      type: String,
-    },
-    'Evo 4': {
-      type: String,
-    },
-    'Evo 5': {
-      type: String,
-    },
-    'Weighted Stats(Lord)': {
-      type: Number,
-    },
-    'HP Lord': {
-      type: Number,
-    },
-    'ATK Lord': {
-      type: Number,
-    },
-    'DEF Lord': {
-      type: Number,
-    },
-    'REC Lord': {
-      type: Number,
-    },
-    'HP Anima': {
-      type: Number,
-    },
-    'ATK Anima': {
-      type: Number,
-    },
-    'DEF Anima': {
-      type: Number,
-    },
-    'REC Anima': {
-      type: Number,
-    },
-    'HP Breaker': {
-      type: Number,
-    },
-    'ATK Breaker': {
-      type: Number,
-    },
-    'DEF Breaker': {
-      type: Number,
-    },
-    'REC Breaker': {
-      type: Number,
-    },
-    'HP Guardian': {
-      type: Number,
-    },
-    'ATK Guardian': {
-      type: Number,
-    },
-    'DEF Guardian': {
-      type: Number,
-    },
-    'REC Guardian': {
-      type: Number,
-    },
-    'HP Oracle': {
-      type: Number,
-    },
-    'ATK Oracle': {
-      type: Number,
-    },
-    'DEF Oracle': {
-      type: Number,
-    },
-    'REC Oracle': {
-      type: Number,
-    },
-    'Video': {
-      type: String,
-    },
-    'Icon': {
-      type: String,
-    },
-    'Image': {
-      type: String,
-    }
+	//name: {
+	//type: String,
+	//default: '',
+	//required: 'Please fill Unit name',
+	//trim: true
+	//},
+	created: {
+		type: Date,
+		default: Date.now,
+	},
+	user: {
+		type: Schema.ObjectId,
+		ref: 'User'
+	},
+	name: {
+		type: String,
+		default: '',
+		required: 'Please provide the exact character name. Example: Terminator Lilith',
+	},
+	character_id: {
+		type: Number,
+		reqired: 'The official Character ID. Example: 559',
+	},
+	rarity: {
+		type: Number,
+		required: 'How many stars is it? Example: 6',
+	},
+	series: {
+		type: String,
+	},
+	leader_skill: {
+		type: String,
+	},
+	bb_skill: {
+		type: String,
+	},
+	sbb_skill: {
+		type: String,
+	},
+	bb_type: {
+		type: String,
+	},
+	sbb_type: {
+		type: String,
+	},
+	cost: {
+		type: Number,
+	},
+	max_lvl: {
+		type: Number,
+	},
+	element: {
+		type: String,
+	},
+	hits: {
+		type: Number,
+	},
+	bb_hits: {
+		type: Number,
+	},
+	sbb_hits: {
+		type: Number,
+	},
+	bb_fill: {
+		type: Number,
+	},
+	sbb_fill: {
+		type: Number,
+	},
+	evo_zel: {
+		type: String,
+	},
+	acquire: {
+		type: String,
+	},
+	gender: {
+		type: String,
+	},
+	bfpro_notes: {
+		type: String,
+	},
+	batch: {
+		type: String,
+	},
+	type_pref: {
+		type: String,
+	},
+	evo_1: {
+		type: String,
+	},
+	evo_2: {
+		type: String,
+	}, 
+	evo_3: {
+		type: String,
+	},
+	evo_4: {
+		type: String,
+	},
+	evo_5: {
+		type: String,
+	},
+	weighted_stats_lord: {
+		type: Number,
+	},
+	hp_lord: {
+		type: Number,
+	},
+	atk_lord: {
+		type: Number,
+	},
+	def_lord: {
+		type: Number,
+	},
+	rec_lord: {
+		type: Number,
+	},
+	hp_anima: {
+		type: Number,
+	},
+	atk_anima: {
+		type: Number,
+	},
+	def_anima: {
+		type: Number,
+	},
+	rec_anima: {
+		type: Number,
+	},
+	hp_breaker: {
+		type: Number,
+	},
+	atk_breaker: {
+		type: Number,
+	},
+	def_breaker: {
+		type: Number,
+	},
+	rec_breaker: {
+		type: Number,
+	},
+	hp_guardian: {
+		type: Number,
+	},
+	atk_guardian: {
+		type: Number,
+	},
+	def_guardian: {
+		type: Number,
+	},
+	rec_guardian: {
+		type: Number,
+	},
+	hp_oracle: {
+		type: Number,
+	},
+	atk_oracle: {
+		type: Number,
+	},
+	def_oracle: {
+		type: Number,
+	},
+	rec_oracle: {
+		type: Number,
+	},
+	video: {
+		type: String,
+	},
+	icon: {
+		type: String,
+	},
+	image: {
+		type: String,
+	}
 });
 
 mongoose.model('Unit', UnitSchema);
