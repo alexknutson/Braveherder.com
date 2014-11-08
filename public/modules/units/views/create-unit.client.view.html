@@ -1,23 +1,346 @@
 <section data-ng-controller="UnitsController">
-    <div class="page-header">
-        <h1>New Unit</h1>
-    </div>
-    <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()" novalidate>
-            <fieldset>
-                <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default">
-                </div>
+	<div class="page-header">
+		<h1>New Unit</h1>
+	</div>
+	<div class="col-md-12">
+		<form class="form-horizontal create-unit" data-ng-submit="create()" novalidate>
+			<fieldset>
+				<div class="form-group">
+					<div class="form-item-wrapper">
+						<label class="control-label" for="Name">Name</label>
+						<div class="controls">
+							<input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Example: Terminator Lilith" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="character_id">Character ID</label>
+						<div class="controls">
+							<input type="number" data-ng-model="character_id" id="character_id" class="form-control" placeholder="Character ID" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="rarity">Rarity</label>
+						<div class="controls">
+							<input type="number" data-ng-model="rarity" id="rarity" class="form-control" placeholder="Rarity" max="6" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="series">Series</label>
+						<div class="controls">
+							<input type="text" data-ng-model="series" id="series" class="form-control" placeholder="Series" max="6" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="leader_skill">Leader Skill</label>
+						<div class="controls">
+							<input type="text" data-ng-model="leader_skill" id="leader_skill" class="form-control" placeholder="Leader Skill" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="bb_skill">BB Skill</label>
+						<div class="controls">
+							<input type="text" data-ng-model="bb_skill" id="bb_skill" class="form-control" placeholder="BB Skill" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="sbb_skill">SBB Skill</label>
+						<div class="controls">
+							<input type="text" data-ng-model="sbb_skill" id="sbb_skill" class="form-control" placeholder="SBB Skill" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="bb_type">BB Type</label>
+						<div class="controls">
+							<input type="text" data-ng-model="bb_type" id="bb_type" class="form-control" placeholder="BB Type" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="sbb_type">SBB Type</label>
+						<div class="controls">
+							<input type="text" data-ng-model="sbb_type" id="sbb_type" class="form-control" placeholder="SBB Type" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="cost">Cost</label>
+						<div class="controls">
+							<input type="number" data-ng-model="cost" id="cost" class="form-control" placeholder="Cost" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="max_lvl">Max Level</label>
+						<div class="controls">
+							<input type="number" data-ng-model="max_lvl" id="max_lvl" class="form-control" placeholder="Example: 100" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="element">Element Type</label>
+						<div class="controls">
+							<input type="text" data-ng-model="element" id="element" class="form-control" placeholder="Example: Light" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="hits">Hits</label>
+						<div class="controls">
+							<input type="number" data-ng-model="hits" id="hits" class="form-control" placeholder="Example: 9" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="bb_hits">BB Hits</label>
+						<div class="controls">
+							<input type="number" data-ng-model="bb_hits" id="bb_hits" class="form-control" placeholder="Example: 15" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="sbb_hits">SBB Hits</label>
+						<div class="controls">
+							<input type="number" data-ng-model="sbb_hits" id="sbb_hits" class="form-control" placeholder="Example: 16" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="bb_fill">BB Fill</label>
+						<div class="controls">
+							<input type="number" data-ng-model="bb_fill" id="bb_fill" class="form-control" placeholder="Example: 13" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="sbb_fill">SBB Fill</label>
+						<div class="controls">
+							<input type="number" data-ng-model="sbb_fill" id="sbb_fill" class="form-control" placeholder="Example: 42" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="evo_zel">Evo Zel</label>
+						<div class="controls">
+							<input type="number" data-ng-model="evo_zel" id="evo_zel" class="form-control" placeholder="Example: 500000" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="evo_zel">Acquire</label>
+						<div class="controls">
+							<input type="text" data-ng-model="acquire" id="acquire" class="form-control" placeholder="Example: Evolve" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="gender">Gender</label>
+						<div class="controls">
+							<input type="text" data-ng-model="gender" id="gender" class="form-control" placeholder="Example: Female" required>
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="bfpro_notes">Notes</label>
+						<div class="controls">
+							<input type="text" data-ng-model="bfpro_notes" id="bfpro_notes" class="form-control" placeholder="Example: Most powerful unit in the game! OMG!">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="batch">Batch</label>
+						<div class="controls">
+							<input type="text" data-ng-model="batch" id="batch" class="form-control" placeholder="Example: Oddball Powerhouse">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="type_pref">Type Pref</label>
+						<div class="controls">
+							<input type="text" data-ng-model="type_pref" id="type_pref" class="form-control" placeholder="Example: AGLBO">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="evo_1">Evolution #1</label>
+						<div class="controls">
+							<input type="text" data-ng-model="evo_1" id="evo_1" class="form-control" placeholder="The exact name of the character this unit evolves from.">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="evo_2">Evolution #2</label>
+						<div class="controls">
+							<input type="text" data-ng-model="evo_2" id="evo_2" class="form-control" placeholder="The exact name of the character this unit evolves from.">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="evo_3">Evolution #3</label>
+						<div class="controls">
+							<input type="text" data-ng-model="evo_3" id="evo_3" class="form-control" placeholder="The exact name of the character this unit evolves from.">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="evo_4">Evolution #4</label>
+						<div class="controls">
+							<input type="text" data-ng-model="evo_4" id="evo_4" class="form-control" placeholder="The exact name of the character this unit evolves from.">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="evo_5">Evolution #5</label>
+						<div class="controls">
+							<input type="text" data-ng-model="evo_5" id="evo_5" class="form-control" placeholder="The exact name of the character this unit evolves from.">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="weighted_stats_lord">Weighted Stats (Lord)</label>
+						<div class="controls">
+							<input type="number" data-ng-model="evo_5" id="evo_5" class="form-control" placeholder="">
+						</div>
+					</div>
+					
+					<!-- Lord Stats -->
+					<div class="form-item-wrapper">
+						<label class="control-label" for="hp_lord">HP Lord</label>
+						<div class="controls">
+							<input type="number" data-ng-model="hp_lord" id="hp_lord" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="atk_lord">ATK Lord</label>
+						<div class="controls">
+							<input type="number" data-ng-model="atk_lord" id="atk_lord" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="def_lord">DEF Lord</label>
+						<div class="controls">
+							<input type="number" data-ng-model="def_lord" id="def_lord" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="rec_lord">REC Lord</label>
+						<div class="controls">
+							<input type="number" data-ng-model="rec_lord" id="rec_lord" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					
+					<!-- Anima Stats -->
+					<div class="form-item-wrapper">
+						<label class="control-label" for="hp_anima">HP Anima</label>
+						<div class="controls">
+							<input type="number" data-ng-model="hp_anima" id="hp_anima" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="atk_anima">ATK Anima</label>
+						<div class="controls">
+							<input type="number" data-ng-model="atk_anima" id="atk_anima" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="def_anima">DEF Anima</label>
+						<div class="controls">
+							<input type="number" data-ng-model="def_anima" id="def_anima" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="rec_anima">REC Anima</label>
+						<div class="controls">
+							<input type="number" data-ng-model="rec_anima" id="rec_anima" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					
+					<!-- Breaker Stats -->
+					<div class="form-item-wrapper">
+						<label class="control-label" for="hp_breaker">HP Breaker</label>
+						<div class="controls">
+							<input type="number" data-ng-model="hp_breaker" id="hp_breaker" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="atk_breaker">ATK Breaker</label>
+						<div class="controls">
+							<input type="number" data-ng-model="atk_breaker" id="atk_breaker" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="def_breaker">DEF Breaker</label>
+						<div class="controls">
+							<input type="number" data-ng-model="def_breaker" id="def_breaker" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="rec_breaker">REC Breaker</label>
+						<div class="controls">
+							<input type="number" data-ng-model="rec_breaker" id="rec_breaker" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					
+					<!-- Guardian Stats -->
+					<div class="form-item-wrapper">
+						<label class="control-label" for="hp_guardian">HP Guardian</label>
+						<div class="controls">
+							<input type="number" data-ng-model="hp_guardian" id="hp_guardian" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="atk_guardian">ATK Guardian</label>
+						<div class="controls">
+							<input type="number" data-ng-model="atk_guardian" id="atk_guardian" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="def_guardian">DEF Guardian</label>
+						<div class="controls">
+							<input type="number" data-ng-model="def_guardian" id="def_guardian" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="rec_guardian">REC Guardian</label>
+						<div class="controls">
+							<input type="number" data-ng-model="rec_guardian" id="rec_guardian" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					
+					<!-- Oracle Stats -->
+					<div class="form-item-wrapper">
+						<label class="control-label" for="hp_oracle">HP Oracle</label>
+						<div class="controls">
+							<input type="number" data-ng-model="hp_oracle" id="hp_oracle" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="atk_oracle">ATK Oracle</label>
+						<div class="controls">
+							<input type="number" data-ng-model="atk_oracle" id="atk_oracle" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="def_oracle">DEF Oracle</label>
+						<div class="controls">
+							<input type="number" data-ng-model="def_oracle" id="def_oracle" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="rec_oracle">REC Oracle</label>
+						<div class="controls">
+							<input type="number" data-ng-model="rec_oracle" id="rec_oracle" class="form-control" placeholder="Example: 6000">
+						</div>
+					</div>
+					
+					<!-- Media -->
+					<div class="form-item-wrapper">
+						<label class="control-label" for="video">Video URL</label>
+						<div class="controls">
+							<input type="text" data-ng-model="video" id="video" class="form-control" placeholder="Example: https://www.youtube.com/watch?v=qpHcCKXg-zs">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="icon">Icon URL</label>
+						<div class="controls">
+							<input type="text" data-ng-model="icon" id="icon" class="form-control" placeholder="Example: Icon URL">
+						</div>
+					</div>
+					<div class="form-item-wrapper">
+						<label class="control-label" for="image">Image URL</label>
+						<div class="controls">
+							<input type="text" data-ng-model="image" id="image" class="form-control" placeholder="Example: Image URL">
+						</div>
+					</div>
+
+
+
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-default">
+				</div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
 				</div>
-            </fieldset>
-        </form>
-    </div>
+			</fieldset>
+		</form>
+	</div>
 </section>
