@@ -1,123 +1,131 @@
 <section data-ng-controller="UnitsController" data-ng-init="find()">
-  <div class="page-header">
-    <h1>Units</h1>
-    <small>Tracking {{units.length}} units in Brave Frontier</small>
-    <input type="search" data-ng-model="q" placeholder="" data-ng-init"updateUnitSearchUrl()">
-  </div>
-  <div class="list-group">
-    <div data-ng-repeat="unit in units | filter:q | limitTo: 10" class="{{unit.element}} unit-list-item list-group-item animate-repeat row">
+	<div class="page-header">
+		<h1>Units</h1>
+		<small>Tracking {{units.length}} units in Brave Frontier</small>
+		<input type="search" data-ng-model="q" placeholder="" data-ng-init"updateUnitSearchUrl()">
+	</div>
+	<div class="list-group">
+		<div data-ng-repeat="unit in units | filter:q | limitTo: 10" class="{{unit.element}} unit-list-item list-group-item animate-repeat row">
 
-      <div class="row">
-        <a data-ng-href="#!/units/{{unit._id}}">
-          <div class="col-md-5 unit-description-container">
-            <img class="lazy img-large" ng-src="{{unit.image}}">
-            <small>#{{unit.character_id}}</small>
-            <h2 class="unit-name {{unit.name}}">{{unit.name}}</h2>
-            <img class="lazy img-small" ng-src="{{unit.icon}}">
-            <br>
-            <br>
-            <br>
-            <br>
-            <span ng-show="unit.leader_skill !== 'None'" class="ng-hide">Leader: {{unit.leader_skill}}</span>
-            <br>
-            <span><img data-ng-src="modules/units/img/battle_crystal.png">{{unit.bb_fill}} BB - </span>
-            <span>{{unit.bb_skill}}</span>
-            <br>
-            <span ng-show="unit.sbb_skill !== 'None'" class="ng-hide"><img data-ng-src="modules/units/img/battle_crystal.png">{{unit.sbb_fill}} SBB - </span>
-            <span ng-show="unit.sbb_skill !== 'None'" class="ng-hide">{{unit.sbb_skill}}</span>
-            <br>
-            <br>
-          </div>
-        </a>
-      <div class="col-md-5  col-md-offset-2 unit-stats-container">
+			<div class="row">
+				<a data-ng-href="#!/units/{{unit._id}}">
+					<div class="col-md-5 unit-description-container">
+						<img class="lazy img-large" ng-src="{{unit.image}}">
+						<small>#{{unit.character_id}}</small>
+						<h2 class="unit-name {{unit.name}}">{{unit.name}}</h2>
+						<img class="lazy img-small" ng-src="{{unit.icon}}">
+						<br>
+						<br>
+						<br>
+						<br>
+						<span ng-show="unit.leader_skill !== 'None'" class="ng-hide">Leader: {{unit.leader_skill}}</span>
+						<br>
+						<span><img data-ng-src="modules/units/img/battle_crystal.png">{{unit.bb_fill}} BB - </span>
+						<span>{{unit.bb_skill}}</span>
+						<br>
+						<span ng-show="unit.sbb_skill !== 'None'" class="ng-hide"><img data-ng-src="modules/units/img/battle_crystal.png">{{unit.sbb_fill}} SBB - </span>
+						<span ng-show="unit.sbb_skill !== 'None'" class="ng-hide">{{unit.sbb_skill}}</span>
+						<br>
+						<br>
+					</div>
+				</a>
+				<div class="col-md-5  col-md-offset-2 unit-stats-container">
 
-        <table class="table table-striped unit-type-grid .col-md-4 ">
-          <tr>
-            <th>
-              <i data-ng-repeat="stars in getTimes(unit.rarity) track by $index" class="glyphicon glyphicon-star"></i>
-            </th>
-            <th>HP</th>
-            <th>ATK</th>
-            <th>DEF</th>
-            <th>REC</th>
-          </tr>
-          <tr>
-            <td>Lord</td>
-            <td>{{unit.hp_lord}}</td>
-            <td>{{unit.atk_lord}}</td>
-            <td>{{unit.def_lord}}</td>
-            <td>{{unit.rec_lord}}</td>
-          </tr>
-          <tr>
-            <td>Anima</td>
-            <td class="success">{{unit.hp_anima}}</td>
-            <td>{{unit.atk_anima}}</td>
-            <td>{{unit.def_anima}}</td>
-            <td>{{unit.rec_anima}}</td>
-          </tr>
-          <tr>
-            <td>Breaker</td>
-            <td>{{unit.hp_breaker}}</td>
-            <td class="success">{{unit.atk_breaker}}</td>
-            <td>{{unit.def_breaker}}</td>
-            <td>{{unit.rec_breaker}}</td>
-          </tr>
-          <tr>
-            <td>Guardian</td>
-            <td>{{unit.hp_guardian}}</td>
-            <td>{{unit.atk_guardian}}</td>
-            <td class="success">{{unit.def_guardian}}</td>
-            <td>{{unit.rec_guardian}}</td>
-          </tr>
-          <tr>
-            <td>Oracle</td>
-            <td>{{unit.hp_oracle}}</td>
-            <td>{{unit.atk_oracle}}</td>
-            <td>{{unit.def_oracle}}</td>
-            <td class="success">{{unit.rec_oracle}}</td>
-          </tr>
-          <tr>
-            <th class="">Type Bonus</th>
-            <th ng-init="unit.hpBonus = unit.hp_anima - unit.hp_lord" class="success">+{{unit.hpBonus}}</th>
-            <th ng-init="unit.atkBonus = unit.atk_breaker - unit.atk_lord" class="success">+{{unit.atkBonus}}</th>
-            <th ng-init="unit.defBonus = unit.def_guardian - unit.def_lord" class="success">+{{unit.defBonus}}</th>
-            <th ng-init="unit.recBonus = unit.rec_oracle - unit.rec_lord" class="success">+{{unit.recBonus}}</th>
-          </tr>
-        </table>
-        <div class="series">
-          <h3> Series </h3>
-          <span data-ng-repeat="sUnit in units | filter:{series : unit.series}">
-            <a data-ng-href="#!/units/{{sUnit._id}}" title="{{sUnit.name}} is apart of the {{unit.series}} series.">
-              <img data-ng-src="{{sUnit.icon}}">
-            </a>
-          </span>
-        </div>
-        <div data-ng-init="list = getEvoList(unit)" class="evo-mats">
-          <h3> Evolve with.. </h3>
-          <span data-ng-repeat="material in list track by $index">
-            <span data-ng-repeat="mat in units | filter:{name : material} | limitTo: 1">
-              <a data-ng-href="#!/units/{{mat._id}}">
-                <img data-ng-src="{{mat.icon}}">
-              </a>
-            </span>
-          </span>
-        </div>
-      </div>
-    </div>
-	<!--
-    <small class="list-group-item-text">
-      Posted on
-      <span data-ng-bind="unit.created | date:'medium'"></span>
-      by
-      <span data-ng-bind="unit.user.displayName"></span>
-    </small>
-	-->
+					<table class="table table-striped unit-type-grid .col-md-4 ">
+						<tr>
+							<th>
+								<i data-ng-repeat="stars in getTimes(unit.rarity) track by $index" class="glyphicon glyphicon-star"></i>
+							</th>
+							<th>HP</th>
+							<th>ATK</th>
+							<th>DEF</th>
+							<th>REC</th>
+						</tr>
+						<tr>
+							<td>Lord</td>
+							<td>{{unit.hp_lord}}</td>
+							<td>{{unit.atk_lord}}</td>
+							<td>{{unit.def_lord}}</td>
+							<td>{{unit.rec_lord}}</td>
+						</tr>
+						<tr>
+							<td>Anima</td>
+							<td class="success">{{unit.hp_anima}}</td>
+							<td>{{unit.atk_anima}}</td>
+							<td>{{unit.def_anima}}</td>
+							<td>{{unit.rec_anima}}</td>
+						</tr>
+						<tr>
+							<td>Breaker</td>
+							<td>{{unit.hp_breaker}}</td>
+							<td class="success">{{unit.atk_breaker}}</td>
+							<td>{{unit.def_breaker}}</td>
+							<td>{{unit.rec_breaker}}</td>
+						</tr>
+						<tr>
+							<td>Guardian</td>
+							<td>{{unit.hp_guardian}}</td>
+							<td>{{unit.atk_guardian}}</td>
+							<td class="success">{{unit.def_guardian}}</td>
+							<td>{{unit.rec_guardian}}</td>
+						</tr>
+						<tr>
+							<td>Oracle</td>
+							<td>{{unit.hp_oracle}}</td>
+							<td>{{unit.atk_oracle}}</td>
+							<td>{{unit.def_oracle}}</td>
+							<td class="success">{{unit.rec_oracle}}</td>
+						</tr>
+						<tr>
+							<th class="">Type Bonus</th>
+							<th class="success">+{{unit.hp_anima - unit.hp_lord}}</th>
+							<th class="success">+{{unit.atk_breaker - unit.atk_lord}}</th>
+							<th class="success">+{{unit.def_guardian - unit.def_lord}}</th>
+							<th class="success">+{{unit.rec_oracle - unit.rec_lord}}</th>
+						</tr>
+					</table>
+					<div class="series">
+						<h3> Series </h3>
+						<span data-ng-repeat="sUnit in units | filter:{series : unit.series}:true | orderBy: '+rarity'">
+							<a data-ng-href="#!/units/{{sUnit._id}}" title="{{sUnit.name}} is apart of the {{unit.series}} series.">
+								<img data-ng-src="{{sUnit.icon}}">
+							</a>
+						</span>
+					</div>
+					<div data-ng-init="list = getEvoList(unit)" class="evo-mats">
+						<h3> Evolve with.. </h3>
+						<span data-ng-repeat="material in list track by $index">
+							<span data-ng-repeat="mat in units | filter:{name : material} | limitTo: 1">
+								<a data-ng-href="#!/units/{{mat._id}}">
+									<img data-ng-src="{{mat.icon}}">
+								</a>
+							</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<!--
+<small class="list-group-item-text">
+Posted on
+<span data-ng-bind="unit.created | date:'medium'"></span>
+by
+<span data-ng-bind="unit.user.displayName"></span>
+</small>
+-->
 
-    <h4 class="list-group-item-heading" data-ng-bind="unit.name"></h4>
-  </div>
-  <strong class="animate-repeat" data-ng-if="unit.length == 0">Sorry, no results found...</strong>
-</div>
-<div class="alert alert-warning text-center" data-ng-hide="!units.$resolved || units.length">
-  No Units yet, why don't you <a href="/#!/units/create">create one</a>?
-</div>
+			<h4 class="list-group-item-heading" data-ng-bind="unit.name"></h4>
+			<div class="pull-right" data-ng-show="authentication.user._id == unit.user._id">
+				<a class="btn btn-primary" href="/#!/units/{{unit._id}}/edit">
+					<i class="glyphicon glyphicon-edit"></i>
+				</a>
+				<a class="btn btn-primary" data-ng-click="remove();">
+					<i class="glyphicon glyphicon-trash"></i>
+				</a>
+			</div>
+		</div>
+		<strong class="animate-repeat" data-ng-if="unit.length == 0">Sorry, no results found...</strong>
+	</div>
+	<div class="alert alert-warning text-center" data-ng-hide="!units.$resolved || units.length">
+		No Units yet, why don't you <a href="/#!/units/create">create one</a>?
+	</div>
 </section>
