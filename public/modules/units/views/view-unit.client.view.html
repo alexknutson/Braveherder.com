@@ -88,7 +88,7 @@
 				</span>
 			</div>
 			<div data-ng-init="find()" class="evo-mats">
-				<h3> Evolve with.. </h3>
+				<h3 ng-show="unit.evo_1 !== 'None'" class="ng-hide"> Evolve with.. </h3>
 				<span data-ng-repeat="material in evo_list track by $index">
 					<span data-ng-repeat="mat in units | filter:{name : material} | limitTo: 1">
 						<a data-ng-href="#!/units/{{mat._id}}">

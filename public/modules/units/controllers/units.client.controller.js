@@ -4,10 +4,8 @@
 angular.module('units').controller('UnitsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Units',
   function($scope, $stateParams, $location, Authentication, Units ) {
 	   $scope.authentication = Authentication;
-	   console.log($stateParams);
-	   console.log(Units);
 
-	   // Create new Unit
+	  // Create new Unit
 	   $scope.create = function() {
 		   // Create new Unit object
 		   var unit = new Units ({
@@ -108,6 +106,7 @@ angular.module('units').controller('UnitsController', ['$scope', '$stateParams',
 		   $scope.units = Units.query();
 		   // Returns Units Data
 	   };
+	  
 
 	   // Find existing Unit
 	   $scope.findOne = function() {

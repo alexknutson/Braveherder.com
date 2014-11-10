@@ -114,9 +114,14 @@ body {
   background: -ms-linear-gradient(left, #2F2727, #1a82f7);
   background: -o-linear-gradient(left, #2F2727, #1a82f7);
 }
+
+/** SAYT */
+.sayt-item {
+	width: 320px;
+}
+
 @media all and (max-width: 768px) {
 
 }
-
 
 
