@@ -1,0 +1,89 @@
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: initial; }
+
+.well {
+  background: black; }
+
+.navbar-invserse {
+  background-color: black !important;
+  border-bottom: 2px solid #00bc8c; }
+
+.unit-page .table-striped > tbody > tr:nth-child(even) {
+  background-color: rgba(48, 48, 48, 0.91); }
+.unit-page .table > tbody > tr > td.success {
+  background-color: #00bc8c; }
+.unit-page .unit-type-grid {
+  position: relative;
+  z-index: 999; }
+  .unit-page .unit-type-grid tr td:first-child {
+    font-weight: bold;
+    color: white; }
+  .unit-page .unit-type-grid th {
+    color: white; }
+    .unit-page .unit-type-grid th.success {
+      background-color: transparent !important;
+      color: #b9f9b9; }
+  .unit-page .unit-type-grid i {
+    color: #00bc8c; }
+.unit-page .unit-description-container {
+  color: white;
+  position: relative;
+  z-index: 99;
+  /*background-color: rgba(0,0,0,0.5);*/
+  /*background-repeat: repeat-y;*/
+  /*background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0)));*/
+  /*background: -webkit-linear-gradient(left, rgba(0,0,0,0.5), rgba(0,0,0,0));*/
+  /*background: -moz-linear-gradient(left, #2F2727, #1a82f7);*/
+  /*background: -ms-linear-gradient(left, #2F2727, #1a82f7);*/
+  /*background: -o-linear-gradient(left, #2F2727, #1a82f7);*/ }
+  .unit-page .unit-description-container .img-large {
+    position: absolute;
+    width: 100%;
+    top: 6%;
+    left: 45%;
+    z-index: 1;
+    transform: rotate3d(0, -63, 0, 190deg); }
+.unit-page .unit-list-item {
+  overflow: hidden;
+  margin-bottom: 2rem !important; }
+.unit-page .unit-description-container small {
+  position: absolute;
+  top: 8px;
+  font-size: 75%;
+  color: white; }
+.unit-page .Fire .unit-description-container {
+  border-top: 5px solid rgba(200, 26, 26, 0.93); }
+.unit-page .Water .unit-description-container {
+  border-top: 5px solid rgba(28, 152, 228, 0.93); }
+.unit-page .Earth .unit-description-container {
+  border-top: 5px solid rgba(73, 157, 64, 0.93); }
+.unit-page .Thunder .unit-description-container {
+  border-top: 5px solid rgba(247, 231, 65, 0.93); }
+.unit-page .Dark .unit-description-container {
+  border-top: 5px solid rgba(101, 57, 157, 0.93); }
+.unit-page .Light .unit-description-container {
+  border-top: 5px solid white; }
+.unit-page .unit-name {
+  position: relative;
+  z-index: 999; }
+.unit-page .unit-description-container span {
+  position: relative;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8); }
+.unit-page .unit-stats-container img {
+  width: 50px; }
+.unit-page .row {
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-repeat: repeat-y;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
+  background: -moz-linear-gradient(left, #2f2727, #1a82f7);
+  background: -ms-linear-gradient(left, #2f2727, #1a82f7);
+  background: -o-linear-gradient(left, #2f2727, #1a82f7); }
+
+/** SAYT */
+.sayt-item {
+  width: 320px; }
+
+/*# sourceMappingURL=compiled-style.css.map */
