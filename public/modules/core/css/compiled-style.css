@@ -8,6 +8,8 @@
   background-color: black !important;
   border-bottom: 2px solid #00bc8c; }
 
+.unit-page .page-header .input-group {
+  margin-top: 25px; }
 .unit-page .table-striped > tbody > tr:nth-child(even) {
   background-color: rgba(48, 48, 48, 0.91); }
 .unit-page .table > tbody > tr > td.success {

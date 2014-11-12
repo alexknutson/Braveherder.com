@@ -92,7 +92,7 @@ angular.module('units').controller('UnitsController', ['$scope', '$stateParams',
 
 	   // Update existing Unit
 	   $scope.update = function() {
-		   var unit = $scope.unit ;
+		   var unit = $scope.unit;
 
 		   unit.$update(function() {
 			   $location.path('units/' + unit._id);
