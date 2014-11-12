@@ -80,9 +80,9 @@
   background-repeat: repeat-y;
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
-  background: -moz-linear-gradient(left, #2f2727, #1a82f7);
-  background: -ms-linear-gradient(left, #2f2727, #1a82f7);
-  background: -o-linear-gradient(left, #2f2727, #1a82f7); }
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent); }
 
 /** SAYT */
 .sayt-item {
