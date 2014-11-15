@@ -136,6 +136,7 @@ body {}
 		background: -moz-linear-gradient(left, rgba(0,0,0,0.5), rgba(0,0,0,0));
 		background: -ms-linear-gradient(left, rgba(0,0,0,0.5), rgba(0,0,0,0));
 		background: -o-linear-gradient(left, rgba(0,0,0,0.5), rgba(0,0,0,0));
+		overflow: hidden;
 	}
 }
 
