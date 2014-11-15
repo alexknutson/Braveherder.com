@@ -4,6 +4,16 @@
 	}
 }
 
+// Top Bar
+.navbar-form {
+	border: 0;
+	
+	// Submit search
+	[type="submit"] {
+		width: 100%;
+	}
+}
+
 body {}
 // bootstrap overrides
 .well {

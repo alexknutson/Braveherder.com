@@ -1,6 +1,11 @@
 .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
   background-color: initial; }
 
+.navbar-form {
+  border: 0; }
+  .navbar-form [type="submit"] {
+    width: 100%; }
+
 .well {
   background: black; }
 
