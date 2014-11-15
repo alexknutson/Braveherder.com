@@ -3,8 +3,6 @@
 
 .navbar-form {
   border: 0; }
-  .navbar-form [type="submit"] {
-    width: 100%; }
 
 .well {
   background: black; }
@@ -92,5 +90,9 @@
 /** SAYT */
 .sayt-item {
   width: 320px; }
+
+@media all and (max-width: 768px) {
+  .navbar-form [type="submit"] {
+    width: 100%; } }
 
 /*# sourceMappingURL=compiled-style.css.map */

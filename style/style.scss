@@ -7,11 +7,6 @@
 // Top Bar
 .navbar-form {
 	border: 0;
-	
-	// Submit search
-	[type="submit"] {
-		width: 100%;
-	}
 }
 
 body {}
@@ -150,4 +145,14 @@ body {}
 	width: 320px;
 }
 
-@media all and (max-width: 768px) {}
+@media all and (max-width: 768px) {
+// Top Bar
+.navbar-form {
+	
+	// Submit search
+	[type="submit"] {
+		width: 100%;
+	}
+}
+
+}
