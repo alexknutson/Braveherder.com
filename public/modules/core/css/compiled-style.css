@@ -88,6 +88,9 @@
   background: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
   overflow: hidden; }
 
+a:hover, a:focus {
+  text-decoration: none; }
+
 /** SAYT */
 .sayt-item {
   width: 320px; }

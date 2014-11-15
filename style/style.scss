@@ -140,8 +140,11 @@ body {}
 	}
 }
 
-/** SAYT */
+a:hover, a:focus {
+	text-decoration: none;
+}
 
+/** SAYT */
 .sayt-item {
 	width: 320px;
 }
