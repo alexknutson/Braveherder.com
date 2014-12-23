@@ -17,7 +17,7 @@
 	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 		<form name="top-search" data-ng-submit="searchUnitSubmit(unit)" class="navbar-form navbar-left" role="search">
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Unit Name, Series, etc" data-ng-model="unit" typeahead="unit as unit.name for unit in units | filter: $viewValue | limitTo: 10" typeahead-template-url="unitSayt.html" required>
+				<input type="text" class="form-control" placeholder="Unit Name, Series, etc" data-ng-model="unit" typeahead="unit as unit.name for unit in $root.allUnits | filter: $viewValue | limitTo: 10" typeahead-template-url="unitSayt.html" required>
 			</div>
 			<button type="submit" class="btn btn-default">Search</button>
 		</form>
