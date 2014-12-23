@@ -1,3 +1,8 @@
+## Braveherder is a Mobile Friendly Unit/Quest database for Brave Frontier built on the MEAN.JS stack.
+
+
+----
+
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
 [![Build Status](https://travis-ci.org/meanjs/mean.svg?branch=master)](https://travis-ci.org/meanjs/mean)
