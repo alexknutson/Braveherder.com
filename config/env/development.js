@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/dune-dev',
 	app: {
-		title: 'BraveHerder - Beta'
+		title: 'BraveHerder - Beta',
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
