@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', 'Authentication', '$location', 'Menus', '$http',
-	function($scope, Authentication, $location, Menus, $http) {
+angular.module('core').controller('HeaderController', ['$scope', 'Authentication', '$location', 'Menus', '$http', '$rootScope',
+	function($scope, Authentication, $location, Menus, $http, $rootScope) {
 		$scope.authentication = Authentication;
 		$scope.isCollapsed = false;
 		$scope.menu = Menus.getMenu('topbar');
@@ -21,7 +21,7 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 		};
 		
 		$http.get('/units').success(function(data){
-			$scope.units = data;
+			$rootScope.allUnits = data;
 		});
 		
 	}
