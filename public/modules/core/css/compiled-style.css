@@ -95,6 +95,10 @@ a:hover, a:focus {
 .sayt-item {
   width: 320px; }
 
+.icon-small {
+  width: 35px;
+  height: auto; }
+
 @media all and (max-width: 768px) {
   .navbar-form [type="submit"] {
     width: 100%; } }
