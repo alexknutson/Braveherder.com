@@ -61,5 +61,33 @@ angular.module('quests').controller('QuestsController', ['$scope', '$stateParams
 				questId: $stateParams.questId
 			});
 		};
+		$scope.questTypeOrder = ['First', 'Fire', 'Water', 'Earth', 'Thunder', 'Light', 'Dark', 'Final', 'Bonus'];
+
+    	$scope.filterByType = function(quest) {
+			var qlist = [];
+			
+			if (quest.world == 'Mistral') {
+				$scope.questTypeOrder.forEach(function(index){
+					//console.log(index);
+					if (index == quest.type) {
+						qlist.push(quest);	
+					}
+//					if ($scope.questTypeOrder[index].indexOf(quest.type) !== -1) {
+//						qlist.push(quest);	
+//					}
+					//console.log(qlist);
+	
+				});
+			//console.log(qlist);
+			return qlist;
+        	//return ($scope.questTypeOrder[0].indexOf(quest.type) !== -1);
+			}
+    	};
+		$scope.orderByType = function(quests) {
+			console.log(quests);
+			
+			return quests[0];
+		}
+		
 	}
 ]);
