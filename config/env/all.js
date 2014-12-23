@@ -2,7 +2,7 @@
 
 module.exports = {
 	app: {
-		title: 'BraveHerder',
+		title: 'BraveHerder | The Brave Frontier Unit Database',
 		description: 'Brave Frontier Unit Database with MongoDB, Express, AngularJS, and Node.js',
 		keywords: 'Brave Frontier, Units, Characters, Database, Team Building, BraverHerder'
 	},
